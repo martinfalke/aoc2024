@@ -19,6 +19,6 @@ defmodule Utils do
 
   def init_day(day) do
     fc = read_input_file(day)
-    lines = split_lines(fc)
+    split_lines(fc)
   end
 end
