@@ -5,20 +5,21 @@ if [[ -z $1 || ! $1 =~ ^[0-9]+$ || (($1 > 25))]]; then
 fi
 
 DAY=$(printf "%02d" "$1")
+template_filename="dayX.exs"
 
 # Determine the base directory of the repository
-if [[ -f "./lib/dayX.ex" ]]; then
+if [[ -f "./lib/$template_filename" ]]; then
   repo_dir="."
-elif [[ -f "../dayX.ex" ]]; then
+elif [[ -f "../$template_filename" ]]; then
   repo_dir=".."
-elif [[ -f "../lib/dayX.ex" ]]; then
+elif [[ -f "../lib/$template_filename" ]]; then
   repo_dir=".."
 else
-  echo "Error: file dayX.ex not found in current directory nor two levels above."
+  echo "Error: file $template_filename not found in current directory nor two levels above."
   exit 1
 fi
 
-source_file="$repo_dir/lib/dayX.exs"
+source_file="$repo_dir/lib/$template_filename"
 dest_dir="$repo_dir/lib/days"
 dest_file="$dest_dir/day$DAY.ex"
 mkdir -p "$dest_dir"
