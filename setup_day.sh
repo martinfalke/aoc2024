@@ -1,5 +1,6 @@
 #!/bin/bash -eu
-if [[ -z $1 || ! $1 =~ ^[0-9]+$ || (($1 > 25))]]; then
+last_aoc_day=25
+if [[ -z $1 || ! $1 =~ ^[0-9]+$ || (${1} -gt ${last_aoc_day}) ]]; then
   echo "Usage: $0 <integer=[1-25]>"
   exit 1
 fi
@@ -28,5 +29,6 @@ cp "$source_file" "$dest_file"
 sed -i "1s/X/$1/" "$dest_file"
 sed -i "3s/X/$1/" "$dest_file"
 mv -v "$repo_dir/input" "$repo_dir/lib/inputs/day$DAY.txt"
+rm -v "$repo_dir/input:Zone.Identifier"
 
 echo "Day $DAY set up successfully at: $dest_file"
