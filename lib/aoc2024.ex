@@ -23,6 +23,7 @@ defmodule Aoc2024 do
   def p(day) do
     run_day(day, :p)
   end
+
   def px(day) do
     run_day(day, :p, :example)
   end
@@ -31,6 +32,7 @@ defmodule Aoc2024 do
   def q(day) do
     run_day(day, :q)
   end
+
   def qx(day) do
     run_day(day, :q, :example)
   end
