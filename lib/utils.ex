@@ -18,10 +18,10 @@ defmodule Utils do
     lines
   end
 
-  def remove_trailing_newline([head | tail]) when tail != [],
+  def remove_trailing_newline([head | tail]) when tail != [""],
     do: [head | remove_trailing_newline(tail)]
-
-  def remove_trailing_newline([_head | []]), do: []
+  def remove_trailing_newline([]), do: []
+  def remove_trailing_newline([head | [""]]), do: [head]
 
   def init_day(day, nil) do
     fc = read_input_file(day)
