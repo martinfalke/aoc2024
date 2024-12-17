@@ -13,7 +13,11 @@ defmodule Utils do
     f
   end
 
-  def split_lines(file_contents) do
+  def split_lines(file_contents, rm_trail \\ :trail)
+  def split_lines(file_contents, :no_trail) do
+    split_lines(file_contents, :trail) |> remove_trailing_newline()
+  end
+  def split_lines(file_contents, _rm_trail) do
     lines = String.split(file_contents, "\n")
     lines
   end

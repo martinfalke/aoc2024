@@ -1,4 +1,3 @@
-# Aoc2024
 # ⭐ Advent of Code 2024 🎄
 [AoC 2024 webpage](https://adventofcode.com/2024)
 

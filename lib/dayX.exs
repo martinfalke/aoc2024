@@ -1,10 +1,10 @@
 defmodule DayX do
   import Utils
-  defp day(), do: X
+  @day X
 
   # Part 1
   def run_p(use_example) do
-    lines = day() |> init_day(use_example) |> split_lines()
+    lines = @day |> init_day(use_example) |> split_lines()
     # delete
     raise "Part 1 not implemented"
     lines
@@ -12,7 +12,7 @@ defmodule DayX do
 
   # Part 2
   def run_q(use_example) do
-    lines = day() |> init_day(use_example) |> split_lines()
+    lines = @day |> init_day(use_example) |> split_lines()
     # delete
     raise "Part 2 not implemented"
     lines
