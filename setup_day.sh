@@ -28,6 +28,7 @@ mkdir -p "$dest_dir"
 cp "$source_file" "$dest_file"
 sed -i "1s/X/$1/" "$dest_file"
 sed -i "3s/X/$1/" "$dest_file"
+mkdir -p "$repo_dir/lib/inputs/example"
 mv -v "$repo_dir/input" "$repo_dir/lib/inputs/day$DAY.txt"
 rm -v "$repo_dir/input:Zone.Identifier"
 
