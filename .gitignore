@@ -28,3 +28,5 @@ aoc2024-*.tar
 # Ignore artifacts from downloaded files
 *:Zone.Identifier
 
+# Ignore puzzle input files
+lib/inputs/**
